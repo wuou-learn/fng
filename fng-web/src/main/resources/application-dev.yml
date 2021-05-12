@@ -1,0 +1,26 @@
+server:
+  port: 8090
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/fng
+    username: root
+    password: Thatyear15
+    driver-class-name: com.mysql.jdbc.Driver
+  flyway:
+    enabled: true
+    locations: classpath:db/dev
+    baseline-on-migrate: false
+    sql-migration-prefix: DEV-
+    baseline-version: 1.0.0
+    table: fng_flyway_schema_history
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: I@D_99_it_redis
+    timeout: 30000
+    database: 20
+  messages:
+    basename: messages,i18n.common
+mybatis-plus:
+  mapper-locations: classpath:/mappers/*.xml
+
